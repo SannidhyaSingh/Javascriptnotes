@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+  /*
+    Check ifor a valid age
+    age < 18  - Underage
+    age > 60  - Retirement age
+    age >= 18 && <=60 - Working Age
+
+    if variable is not undefined
+           if variable is not null
+                  check the age coindition
+            else
+                print age is not avaible
+
+    else
+             print ge is not defined
+
+  */
+   var age
+    if(typeof age === typeof undefined)
+    {
+        console.log("Age is not defined");
+    }
+    else
+    {
+         if(age !== null)  
+         {
+            if(age>=18 && age<=60)
+                console.log('Working age');
+           else if(age<18)
+                console.log('Underage');
+            else
+                console.log('retirement age')
+          }
+         
+         
+         else{
+         console.log('age is not available');
+         }
+    }
+
+ </script>
+</body>
+</html>

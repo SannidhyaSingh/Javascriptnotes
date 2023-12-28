@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let dayoftheweek ="Friday";
+        switch(dayoftheweek)
+        {
+           case "Monday":
+              console.log("It's the start of the week");
+            break;
+           case "Friday":
+               console.log("It's the end of the week");
+            break;
+            case "Saturday":
+            case "Sunday":
+                console.log("It's the end of the week");
+            break;
+            default:
+                console.log("its another day of the week");
+                              
+        }
+
+
+
+        /*var age  = 15;
+        /*if(age >= 18)
+            console.log("The candidate can vote");
+        else
+            console.log("The candidate cannot vote");*/
+
+        //Conditinal Operator
+       // age > 18 ? console.log("Person Can Vote") : console.log("Person cannot vote");
+
+      /* var totalNumber = 0;
+       console.log(totalNumber);
+       while(totalNumber < 10)
+       {
+            console.log(`Current  -> ${totalNumber}`); (String interpolation)
+            totalNumber++;
+       }*/
+      /*let number=0;
+      while(number<=20)
+      {
+        if(number%2==0)
+        {
+            console.log(number+"even");
+        }
+        else
+        {
+            console.log("odd");
+        }
+        number++;
+      }*/
+
+      /*let x = 10;
+
+      do{
+            console.log("Value =" + x);
+            //let value = prompt();
+
+            console.log("You Enmtered" + value);
+
+      }
+      while(x > 10)*/
+
+      //ASk the user for a pin number
+      //Commpare the pin number against a predefined pin
+      //If the pin number is correct then print "Welcomeback"
+      //The loop must continue until the pin number is correct 
+      //Or max 3 retries
+      /*let y=12345;
+      let totalRetries =1;
+      let userInput = 0;
+      do{
+        userInput=prompt();
+        if(userInput==y)
+            console.log("Welcome back");
+        else
+            totalRetries++;
+        
+      }
+      while(totalRetries <= 3 && userInput !== y);*/
+
+      //for(var i =0;i< 10;i++)
+        //console.log(i);
+
+      /*var myFavFruits = ["Apple","Orange","Grapes","Banana"];
+      console.log(myFavFruits[0]);
+      console.log(myFavFruits[2]);
+
+      myFavFruits[0] = "Watermelon";
+
+      //console.log(myFavFruits[0]);
+
+      myFavFruits.push("Blueberry");
+      console.log("Total Items =" + myFavFruits.length);
+      for(var i=0;i<myFavFruits.length;i++)
+      console.log(i+myFavFruits[i]);*/dayoftheweek
+      var students = [
+        {Name : "Student 1", Age : 18, Course : "BTECH"},
+        {Name : "Student 2", Age : 18, Course : "BTECH"},
+        {Name : "Student 3", Age : 18, Course : "BTECH"},
+        {Name : "Student 4", Age : 18, Course : "BTECH"},
+        {Name : "Student 5", Age : 18, Course : "BTECH"},
+      ];
+     // for(var i=0;i<students.length;i++)
+     // console.log(i+students[i].Name,students[i].Course);
+
+     //{Name : "Tea", Qty : 10, UnitPrice : 10} 
+     //{Name : "Coffree", Qty : 1, UnitPrice : 20} 
+     //{Name : "Sugar", Qty : 1, UnitPrice : 50} 
+
+    /* "Tea , 10 , 10 , Total = 118",
+     "Coffee , 1, 20, Total = 23.6",
+     "Sugar , 1, 50, Total = 59",
+
+     "Total  = 200.60"*/
+     /*let items=[{Name: "Tea", Qty:10,UnitPrice:10.50},
+                {Name: "Coffee", Qty:5,UnitPrice:15},
+                {Name: "Sugar",Qty:1,  UnitPrice:10}
+     ];
+     var total=0;
+     for(var i of items )
+     {
+        var itemtotal=i.Qty*i.UnitPrice;
+        total+=itemtotal;
+        console.log(i.Name,i.Qty,i.UnitPrice,itemtotal);
+     }
+        console.log("Total="+total);
+   
+
+     /*for(var student of students)
+     {
+        console.log(student.Name,student.Course);
+     }*/
+
+          </script>
+</body>
+</html>

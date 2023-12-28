@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      /*var a = 1; //int a = 1;
+        var b = 10;
+
+        console.log(a + b);
+        var message = "Hello World";//string message = "Hello World";
+
+        console.log(message + a);*/
+
+      var maxAllowedUsers = 10; //Number
+      var phi = 1.467; //Decimal
+      var message = "Hello World"; //String
+      let x = true; //Boolen
+      var isuserActive = true; //
+      //var isUseronline = null;
+      var petrolLevel = null;
+
+      // 1. Undefined = Variable not declared
+      // 2. null = Variable is declared but value is unknown
+      // 3. Value = Variable has a non null value
+
+      var car = { Name: "Swift", YearOfMan: 2023, Color: "Red" };
+      //Object Literal
+
+      console.log(car);
+      console.log(car.Color);
+
+      
+
+      //var x = 20;
+      const maxBrightness = 30;
+      //maxAllowedUsers = 40;
+
+      console.log(maxBrightness);
+      console.log(
+        "Name = " +
+          car.Name +
+          ", Made On :" +
+          car.YearOfMan +
+          ",And the color is " +
+          car.Color
+      );
+      console.log(
+        `Name = ${car.Name}, Made  On : ${car.YearOfMan}, And the color is ${car.Color}`
+      );
+      /* Name = Swift, Made  On : 2023, And the color is red */
+
+      //console.log(maxAllowedUsers + " + " + maxBrightness + " = " + (maxAllowedUsers+maxBrightness));
+      //String Interpolation
+      //console.log(`${maxAllowedUsers} plus ${maxBrightness}=${maxAllowedUsers + maxBrightness}`);
+
+      //Conditional Statements or Braching Statements
+      if (typeof isUseronline === typeof undefined) {
+        console.log("Varaible is not declared");
+      }
+      else
+      {
+        if (isUseronline == null) {
+          console.log("We ar trying to find the status");
+        } else if (isUseronline == true) 
+        console.log("User is online");
+        else console.log("User is offline");
+    }
+      
+    </script>
+  </body>
+</html>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=1, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        /*----------------- Spread Operator ------------ 
+        let firstArray  = [1,2,3,4,5];
+        let secondArray = [...firstArray,6,7,8,9,10];
+
+        console.log(secondArray);
+
+        let employe = { Name : "ABC", EmployeeId : 10001,Email : "xyz@abcd.com", IsOnline : true}
+        employe = {...employe, IsOnline : false};
+
+        console.log(employe);*/
+
+
+        /*---------------- Destructuring ------------------ 
+        //let name = employe.Name;
+       // let isEmployeeOnline = employe.IsOnline;
+       let {Name,IsOnline,Email} = employe;
+
+       console.log(Name,IsOnline,Email);*/
+
+       function add(x,y)
+       {
+           let sum = x + y;
+           return sum;
+       }
+       function multiply(a,b)
+       {
+        let prod=a*b;
+        return prod;
+       }
+       function subtract(c,d)
+       {
+        let diff=c-d;
+        return diff;
+       }  
+       function divide(c,d)
+       {
+        let div=c/d;
+        return div;
+       }
+      // let result = add(10,30);
+      // console.log(result);
+
+      // function willbe named addAndDisplay
+      // params x,y
+      // calls add to find the sum
+      // Prints x + y = result 
+     function calculate(x,y,op)
+     {
+       let result= 0;
+
+       switch(op)
+       {
+           case "+" : result = add(x,y);break;
+           case "-" : result = subtract(x,y);break;
+           case "*" : result = multiply(x,y);break;
+           case "/" : result = divide(x,y) ;break;
+           default : console.error("Invalid operator");
+       }
+        console.log(`${x} ${op} ${y} = ${result}`);
+     } 
+      
+     //calculate(10,30,"+");
+     //calculate(30,10,"-");
+     //calculate(30,10,"*");
+     //calculate(30,10,"/"); 
+
+     const displayMessage = function() {
+        console.log("Hello World");
+     }
+
+     displayMessage();
+
+     //Arrow Functions
+     /*function showGreetings(){
+        console.log("Hello its such a wonderful day");
+     }*/
+
+     const showGreetings =(message)=> 
+                 console.log("Hello," + message);
+  
+     showGreetings("What a wonderful day");
+  </script>
+</body>
+</html>

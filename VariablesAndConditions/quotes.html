@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #quotesForTheDay > div {
+            box-shadow: 1px;
+            margin: 10px;
+            border: 1px solid gray;
+            padding: 10px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div id="quotesForTheDay"></div>
+    <script>
+        //JSON - JAVASCRIPT OBJECT NOTATION
+        let quotesUrl = "https://dummyjson.com/quotes"; 
+        window.fetch(quotesUrl)
+            .then(response => response.json())
+            .then(data => displayQuotes(data.quotes));
+
+
+        let quotesDiv = document.getElementById("quotesForTheDay");
+
+        function displayQuotes(quoteList)
+        {
+            for(var q of quoteList)
+            {
+                createAndAddQuotes(q);
+            }
+        }
+
+        function createAndAddQuotes(quote){
+            let quoteDiv = document.createElement("div");
+            quoteDiv.innerHTML = `<i>${quote.quote}<i/><br><b>${quote.author}</b>`;
+                
+            quotesDiv.appendChild(quoteDiv);
+     }
+    </script>
+</body>
+</html>

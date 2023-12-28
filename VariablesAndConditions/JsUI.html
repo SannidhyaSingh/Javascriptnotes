@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet"   
+    href="https://fonts.googleapis.com/css?family=Roboto" />
+   
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik+Doodle+Shadow&display=swap" rel="stylesheet">
+    <style>
+        body {
+            width:100%;
+            font-family: "Roboto",sans-serif;
+            text-align: center;
+        }
+
+        h1 {
+            font-family:  "Rubik Doodle Shadow";
+        }
+        .toDoItemDiv {
+            margin-left:   auto;
+            margin-right: auto;
+            border: 1px solid gray;
+            border-radius: 10px;
+            width: fit-content;
+            padding: 10px;
+        }
+
+        .toDoItemDiv > input{
+            border: none;
+            font-family: "Roboto", sans-serif;
+        }
+
+        .toDoItemDiv > button{
+            border-radius: 5px;
+            background-color: white;
+            border: none;
+            font-family: "Roboto", sans-serif;
+        }
+    </style>
+  </head>
+  <body>
+ <h1>To Do Items</h1>
+    <div class="toDoItemDiv">
+        <input type="text" placeholder="Enter the to-do item" id="to-doitems" />
+        <button type="button" onclick="Additems()">Add items</button>
+    </div>
+    <ul id="ulList">
+=
+    </ul>
+    <script>
+
+      let toDoItems  = [];
+
+      function Additems() {
+        var todoItem = document.getElementById("to-doitems");
+        var ulList = document.getElementById("ulList");
+
+        if (todoItem.value.length == 0) {
+          console.log("Please enter a valid value");
+        }
+        else {
+
+            toDoItems.push({Title : todoItem.value, IsCompleted :  false});
+            todoItem.value = "";
+            console.log(toDoItems);
+        }
+
+        displayToDoItemList();
+        
+      }
+
+      function displayToDoItemList(){
+        ulList.innerHTML = "";
+        for(var item of toDoItems)
+        {
+            var li = document.createElement("li");
+            li.innerHTML = item.Title;
+
+            var removeButton = document.createElement("button");
+            removeButton.innerHTML = "Clear";
+            removeButton.onclick = () => removeItemFromArray(item.Title);
+            li.appendChild(removeButton);
+            ulList.appendChild(li);
+        }
+      }
+       //[a,b,c]
+      function removeItemFromArray(title)
+      {
+        toDoItems = toDoItems.filter(d => d.Title !== title);
+        displayToDoItemList();
+      }
+    </script>
+  </body>
+</html>

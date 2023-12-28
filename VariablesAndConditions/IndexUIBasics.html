@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body id="body">
+    <input type="text" placeholder="Enter a message" 
+         id="txtMessage" />
+    <select id="favFruit">
+        <option value="" selected></option>   
+        <option value="Orange">Orange</option>
+        <option value="Apples"  >Apples</option>
+        <option value="Graphes">Grape</option>
+    </select>
+    <input type="color" id="DiffColors" 
+    />
+    <button type="button" onclick="color()">Apply different backgroundColors</button>
+    <img src="" height="100" width="100" id="imgFruit" />
+    <button type="button" onclick="showMessage()" >Show Message</button>
+
+     <h1 id="heading"></h1>
+    <script>
+        function showMessage(){
+            var messageTextBox = document.getElementById("txtMessage");
+            var favFruitSelection = document.getElementById("favFruit");
+            var image=document.getElementById("imgFruit"); 
+            var h1 = document.getElementById("heading");
+
+            //var abcd = messageTextBox.value;
+
+           // messageTextBox.value = "Hello World";
+
+           if(messageTextBox.value.length == 0)
+            {
+                    messageTextBox.style.backgroundColor = "1px solid red";
+             }
+           let message = messageTextBox.value;
+           let myFavFruit = favFruitSelection.value;
+           var colors=document.getElementById("DiffColors").value;
+
+           h1.style.color = colors;
+           h1.innerHTML = message;
+           
+            image.setAttribute("height",200);
+            image.setAttribute("width",200);
+            
+            //document.getElementById("body").style.backgroundColor = "red";
+
+           if(myFavFruit == "Graphes")
+                 image.setAttribute("src","https://images.pexels.com/photos/708777/pexels-photo-708777.jpeg?cs=srgb&dl=bunch-cluster-delicious-708777.jpg&fm=jpg");
+            else if(myFavFruit=="Apples")
+             image.setAttribute("src","https://media.post.rvohealth.io/wp-content/uploads/2020/09/Do_Apples_Affect_Diabetes_and_Blood_Sugar_Levels-732x549-thumbnail-1-732x549.jpg");
+            else if(myFavFruit=="Orange")
+            image.setAttribute("src","https://cdn.britannica.com/24/174524-050-A851D3F2/Oranges.jpg");
+            else
+               console.log("image needs to be selected");
+            console.log(message,myFavFruit);
+               
+        }
+        function color()
+        { 
+             
+               var colors=document.getElementById("DiffColors").value;
+
+               console.log(colors);
+              
+               document.getElementById("body").style.backgroundColor=colors;
+               
+
+        }
+    </script>
+</body>
+</html>

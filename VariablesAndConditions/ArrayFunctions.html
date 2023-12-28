@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        let orders = [
+        {OrderId : 1,Product : "Tea", Qty : 2, UnitPrice : 50,DeliveryStatus : "Pending"},
+        {OrderId : 2,Product : "Coffee", Qty : 2, UnitPrice : 150,DeliveryStatus : "Delivered"},
+        {OrderId : 3,Product : "Sugar", Qty : 2, UnitPrice : 40,DeliveryStatus : "Out for Delivery"},
+        {OrderId : 4,Product : "Milk", Qty : 2, UnitPrice : 40,DeliveryStatus : "Pending"},
+        {OrderId : 5,Product : "Chocalate", Qty : 2, UnitPrice : 250,DeliveryStatus : "Delivered"}
+    
+    ]
+
+    /* ------ Filter Function */
+    var deliveredItems = orders.filter(o => o.DeliveryStatus == "Delivered");
+    for(var item of deliveredItems)
+       console.log(item.Product,item.DeliveryStatus);
+
+    var notdelivered=orders.filter(nd=>nd.DeliveryStatus != "Delivered" 
+                                     && nd.UnitPrice >= 50);
+    for(var item of notdelivered)
+         console.log(item.Product,item.DeliveryStatus);
+    
+
+    /* --------- Sort Function--------- */
+    var sortByUnitPrice = orders.sort(checkByUnitPrice).reverse();
+
+    function checkByUnitPrice(item1,item2){
+     if(item1.UnitPrice > item2.UnitPrice )
+        return 1;
+      else if (item1.UnitPrice < item2.UnitPrice)
+        return -1
+    else
+        return 0 ;
+    }
+
+    function checkByUnitPriceDesc(item1,item2){
+     if(item1.UnitPrice < item2.UnitPrice )
+        return 1;
+      else if (item1.UnitPrice > item2.UnitPrice)
+        return -1
+    else
+        return 0 ;
+    }
+
+    //console.log(sortByUnitPrice);
+
+    /*------- Map Function ----------*/
+     var ordersWithTotal = orders.map(d => { d.Total = d.Qty * d.UnitPrice;
+                                             d.Product =  d.Product.toUpperCase();
+                                            ; return d});
+
+     var newArray = [];
+     for(var o of orders)
+     {
+        o.Total = o.Qty * o.UnitPrice;
+        o.Product = o.Product.toUpperCase();
+        newArray.push(o);
+
+     }
+
+     console.log(ordersWithTotal);
+
+     /* ------- Find ---- */
+     var p = orders.find(d => d.Product === "TEA");
+     if(p)
+        console.log(p);
+    else
+        console.log("The product does not exist");
+
+    /*---------------- Find Index --------------- */
+    var locationOfOrder = orders.findIndex(d => d.Product == "CURD");
+
+    if(locationOfOrder >= 0)
+       console.log("Product exist at location " + locationOfOrder);
+    else
+      console.log("Product doews not exist");
+
+    /*----------------- Reduce -------------------- */
+    
+    let totalOrderValue = orders.reduce((total,d) =>   total += (d.Qty * d.UnitPrice),0);
+    console.log(totalOrderValue);
+
+    /*var totalNetAmount = 0;
+    for(var o in orders)
+    {
+        totalNetAmount += o.Qty * o.UnitPrice;
+    }*/
+    </script>
+</body>
+</html>
